@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppInstaller
+	Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer.appinstaller"
+	Version="1.0.0.0" xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2">
+	<MainBundle
+		Name="FortniteGameStatsViewer"
+		Version="1.0.0.0"
+		Publisher="CN=John Gage Faulkner, O=John Gage Faulkner, L=Barnesville, S=Georgia, C=US"
+		Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/FortniteGameStatsViewer_1.0.0.0_x86_x64_Debug.msixbundle" />
+	<Dependencies>
+		<Package
+			Name="Microsoft.UI.Xaml.2.8"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/Dependencies/x86/Microsoft.UI.Xaml.2.8.appx"
+			Version="8.2212.15002.0" />
+		<Package
+			Name="Microsoft.UI.Xaml.2.8"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x64"
+			Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/Dependencies/x64/Microsoft.UI.Xaml.2.8.appx"
+			Version="8.2212.15002.0" />
+		<Package
+			Name="Microsoft.NET.CoreRuntime.2.2"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/Dependencies/x86/Microsoft.NET.CoreRuntime.2.2.appx"
+			Version="2.2.31331.1" />
+		<Package
+			Name="Microsoft.NET.CoreRuntime.2.2"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x64"
+			Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/Dependencies/x64/Microsoft.NET.CoreRuntime.2.2.appx"
+			Version="2.2.31331.1" />
+		<Package
+			Name="Microsoft.NET.CoreFramework.Debug.2.2"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/Dependencies/x86/Microsoft.NET.CoreFramework.Debug.2.2.appx"
+			Version="2.2.31327.1" />
+		<Package
+			Name="Microsoft.NET.CoreFramework.Debug.2.2"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x64"
+			Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/Dependencies/x64/Microsoft.NET.CoreFramework.Debug.2.2.appx"
+			Version="2.2.31327.1" />
+		<Package
+			Name="Microsoft.VCLibs.140.00.Debug"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x64"
+			Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/Dependencies/x64/Microsoft.VCLibs.x64.Debug.14.00.appx"
+			Version="14.0.30704.0" />
+		<Package
+			Name="Microsoft.VCLibs.140.00.Debug"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/Dependencies/x86/Microsoft.VCLibs.x86.Debug.14.00.appx"
+			Version="14.0.30704.0" />
+		<Package
+			Name="Microsoft.VCLibs.140.00.Debug.UWPDesktop"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x64"
+			Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/Dependencies/x64/Microsoft.VCLibs.x64.Debug.14.00.Desktop.appx"
+			Version="14.0.30704.0" />
+		<Package
+			Name="Microsoft.VCLibs.140.00.Debug.UWPDesktop"
+			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+			ProcessorArchitecture="x86"
+			Uri="https://raw.githubusercontent.com/johngagefaulkner/fortniteapi-dev-docs/main/stats/FortniteGameStatsViewer_1.0.0.0_Debug_Test/Dependencies/x86/Microsoft.VCLibs.x86.Debug.14.00.Desktop.appx"
+			Version="14.0.30704.0" />
+	</Dependencies>
+	<UpdateSettings>
+		<OnLaunch
+			HoursBetweenUpdateChecks="0" />
+	</UpdateSettings>
+</AppInstaller>
