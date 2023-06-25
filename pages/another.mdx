@@ -1,7 +1,30 @@
 # Another Page
 
-```js filename="demo.js" {3} copy
-let a = 1;
+Here's some code I saved from another "MarkDocs" template app I'd setup:
 
-console.log(a);
+```csharp
+// MainWindow.xaml.cs
+private void myButton_Click(object sender, RoutedEventArgs e)
+{
+    // Retrieve the window handle (HWND) of the current (XAML) WinUI 3 window.
+    var hWnd =
+        WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+    // Retrieve the WindowId that corresponds to hWnd.
+    Microsoft.UI.WindowId windowId =
+        Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
+
+    // Lastly, retrieve the AppWindow for the current (XAML) WinUI 3 window.
+    Microsoft.UI.Windowing.AppWindow appWindow =
+        Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
+
+    if (appWindow != null)
+    {
+        // You now have an AppWindow object, and you can call its methods to manipulate the window.
+        // As an example, let's change the title text of the window.
+        appWindow.Title = "Title text updated via AppWindow!";
+    }
+}
 ```
+
+This was from `MainWindow.Xaml.cs`
