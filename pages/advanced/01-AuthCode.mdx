@@ -1,23 +1,9 @@
-# Authentication Process
-
-## Step 1: Obtain an Authorization Code
+# Step 1: Obtain an Authorization Code
 
 - Go to [Epic Games' official website](https://www.epicgames.com) and ensure you're logged into the account that you want to use.
 - Click on [this link](https://www.epicgames.com/id/api/redirect?clientId=3446cd72694c4a4485d81b77adbb2141&responseType=code) and copy the entire JSON object.
     - For reference, you can simply hit `CTRL` + `A` on your keyboard (to "Select All") then hit `CTRL` + `C` (to "Copy" the text.)
 - Paste it into the login prompt in the app.
-    
-
-## Step 2: Obtain an Access Token
-
-- Send a `POST` request to \`[https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token](https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token)\` configured to meet the following requirements:
-    - **Headers:**
-        - **Content-Type:** `application/x-www-form-urlencoded`
-        - **Authorization:** `basic clientId:secret`
-            - The string above is the `clientId` : `secret` encoded in Base64.
-    - **Body:**
-        - **grant_type:** `authorization_code`
-        - **code:** `$authCode` _(from Step 1)_
 
 ### Sample Code
 
