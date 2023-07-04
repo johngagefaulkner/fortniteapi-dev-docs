@@ -2,6 +2,7 @@
   "index": "Introduction",
   "another": "Getting Started",
   "advanced": "Design",
+  "components": "Components",
   "about": {
     "title": "About",
     "type": "page"
