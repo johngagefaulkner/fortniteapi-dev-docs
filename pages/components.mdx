@@ -1,23 +1,7 @@
 ## Components
 
-import { useState } from 'react'
-
-{/* Import CSS modules */}
-import styles from '../components/counters.module.css'
-
-export const Counter = () => {
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <button onClick={() => setCount(count + 1)} className={styles.counter}>Clicked {count} times</button>
-    </div>
-  );
-};
-
-<Counter/>
-
 ## External Component
 
-import Counters from '../components/counters'
+import MyOAuthForm from '../components/counters'
 
-<Counters />
+<MyOAuthForm />
