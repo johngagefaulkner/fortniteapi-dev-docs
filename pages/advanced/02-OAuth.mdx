@@ -15,22 +15,29 @@ For this example, we'll be using the same client-credentials as before. I'll lis
 
 The `Authentication Code` from Step 1 **does not** provide us with direct access to account features or information, nor does it allow us to start making API calls. Instead, it enables us to request an `OAuth Access Token` which we will then use to make HTTP calls to Epic Games (or Fortnite) API endpoints. The `Access Token` authenticats the requests *as the user the token was generated for.* With the `Authentication Code` from Step 1 in hand, let's continue:
 
-- Send a `POST` request to \`[https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token](https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token)\` configured to meet the following requirements:
+- Send a `POST` request to `https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token` configured to meet the following requirements:
     - **Headers:**
         - **Content-Type:** `application/x-www-form-urlencoded`
-        - **Authorization:** `basic $base64ClientId:Secret`
-            - The string above is the `clientId` : `secret` encoded in Base64.
-			- > **Example:** Using our Client Credentials listed in the Prerequisites section above, our calculated Base64 basic authorization string would be: `MzQ0NmNkNzI2OTRjNGE0NDg1ZDgxYjc3YWRiYjIxNDE6OTIwOWQ0YTVlMjVhNDU3ZmI5YjA3NDg5ZDMxM2I0MWE=`
+        - **Authorization:** `basic $base64(ClientId:Secret)`
     - **Body:**
         - **grant_type:** `authorization_code`
         - **code:** `$authCode` _(from Step 1)_
+
+> **NOTE:** To properly build the `Authorization` header, you must combine the `ClientId` and `Secret` (from above) with a `:` separating them, then Base64Encode the resulting string (text). 
+> **EXAMPLE:** Using the Client Credentials listed in the #Prerequisites section above, we'd follow these steps:
+> 1. Building the combined `ClientId:Secret` string: `3446cd72694c4a4485d81b77adbb2141:9209d4a5e25a457fb9b07489d313b41a`
+> 2. Once the step above is complete, take the combined string and Base64-Encode it: `MzQ0NmNkNzI2OTRjNGE0NDg1ZDgxYjc3YWRiYjIxNDE6OTIwOWQ0YTVlMjVhNDU3ZmI5YjA3NDg5ZDMxM2I0MWE=`
+> 3. Done! That's the value you use for the `Basic` authentication header. Here's what that looks like: ```-H "Authorization: basic MzQ0NmNkNzI2OTRjNGE0NDg1ZDgxYjc3YWRiYjIxNDE6OTIwOWQ0YTVlMjVhNDU3ZmI5YjA3NDg5ZDMxM2I0MWE="```
 
 ---
 
 All things considered, let's take a look at a sample request using `CURL`:
 
-```c
-curl -X POST "https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token" -H "Content-Type: application/x-www-form-urlencoded" -H "Authorization: basic MzQ0NmNkNzI2OTRjNGE0NDg1ZDgxYjc3YWRiYjIxNDE6OTIwOWQ0YTVlMjVhNDU3ZmI5YjA3NDg5ZDMxM2I0MWE=" -d '{ "grant_type: authorization_code", "code: $authCode" }' --silent
+```cmd
+curl -X POST "https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token"
+	-H "Content-Type: application/x-www-form-urlencoded"
+	-H "Authorization: basic MzQ0NmNkNzI2OTRjNGE0NDg1ZDgxYjc3YWRiYjIxNDE6OTIwOWQ0YTVlMjVhNDU3ZmI5YjA3NDg5ZDMxM2I0MWE="
+	-d "{ \"grant_type: authorization_code\", \"code: $authCode\" }" --silent
 ```
 
 If everything is entered correctly, you should be the proud owner of a new `OAuth Access Token` that will authenticate you to the Epic Games Services (EGS) API network!
